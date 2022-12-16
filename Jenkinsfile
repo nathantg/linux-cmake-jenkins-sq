@@ -44,7 +44,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarScanner'; // Name of the SonarQube Scanner you created in "Global Tool Configuration" section
                     withSonarQubeEnv() {
-                        sh "${scannerHome}/bin/sonar-scanner"
+                        sh "${scannerHome}/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner"
                     }
                 }
             }
