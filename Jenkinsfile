@@ -32,8 +32,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh ''' 
-                  mkdir build               
-                  cmake -S . -B build
+                  mkdir build && cd build
+                  cmake .. && cd ..
                   .sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output cmake --build build/ --config Release
                 '''
             }
